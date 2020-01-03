@@ -13,6 +13,8 @@
         <module>spring-cloud</module>
         <module>socket</module>
         <module>netty</module>
+        <module>ceph</module>
+        <module>operations</module>
     </modules>
 
 
