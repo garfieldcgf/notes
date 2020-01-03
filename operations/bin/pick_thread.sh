@@ -65,7 +65,11 @@ awk '{num[$4]++}
 ##对上述输出的每一个线程做分析处理，调用parseLog
 cat thread.log | while read line
     do
-      grep "\""${line}"\""  "$1" > temp.log
+      ##有时候线程名有复杂字符需要过滤掉
+      line=${line/#[/}
+      line=${line/#]/}
+      echo ${line}
+      grep ${line}  "$1" > temp.log
       parseLog temp.log $2
     done
 exit
